@@ -1,32 +1,33 @@
-# NF ACL Module
-
-* [Installation](#installation)
-* [Command](#command)
+# NPM Auto Version
+Update your npm version 
 
 <a name="installation"></a>
-## Installation
+## Usage
+### Use as global package
 
 ```
-npm install --save @codersvn/nodejs-acl
+npm install -g @codersvn/npm-auto-version
 ```
 
-If YARN
+then 
 
 ```
-yarn add @codersvn/nodejs-acl
+npm-auto-version patch
 ```
-#### Configuration
-
-make `.env` file is a copy of `.env.example` and update it with your information
-
-#### Migrate database
-
 ```
-./node_modules/.bin/sequelize db:migrate
+npm-auto-version minor
+```
+```
+npm-auto-version major
 ```
 
-#### Install seed data
-
+### NPX
 ```
-./node_modules/.bin/sequelize db:seed:all
+npx @codersvn/npm-auto-version patch
+```
+```
+npx @codersvn/npm-auto-version minor
+```
+```
+npx @codersvn/npm-auto-version major
 ```
