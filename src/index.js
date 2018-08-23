@@ -19,7 +19,8 @@ switch (process.argv[2]) {
     type = 'minor';
 }
 
-const new_version = version.increase(type).toString();
+const new_version = version.increase(type);
+console.log(new_version);
 
 try {
   parser.writePackageVersion(new_version);

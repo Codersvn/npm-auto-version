@@ -1,6 +1,6 @@
 {
   "name": "@codersvn/npm-auto-version",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "This script is used to automatically generate new NPM versions when publishing.",
   "main": "dist/src/index.js",
   "scripts": {

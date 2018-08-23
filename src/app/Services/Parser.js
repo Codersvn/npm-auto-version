@@ -11,20 +11,7 @@ class Version {
     return [this.major, this.minor, this.patch].join('.');
   }
   increase(type = 'patch') {
-    switch (type) {
-      case 'patch':
-        this.patch++;
-        break;
-      case 'major':
-        this.major++;
-        break;
-      case 'minor':
-        this.minor++;
-        break;
-      default:
-        break;
-    }
-    return this;
+    return semver.inc(this.toString(), type);
   }
 }
 export class Parser {
