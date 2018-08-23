@@ -1,0 +1,60 @@
+{
+  "name": "@codersvn/npm-auto-version",
+  "version": "1.0.5",
+  "description": "This script is used to automatically generate new NPM versions when publishing.",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "test": "jest --forceExit",
+    "devstart": "./node_modules/.bin/nodemon ./node_modules/.bin/babel-node src/index.js",
+    "increase": "./node_modules/.bin/babel-node src/index.js",
+    "build": "rimraf dist && ./node_modules/.bin/babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,error_code.md,README.md --copy-files",
+    "publish_module": "npm run build && npm run increase patch && npm publish --access public"
+  },
+  "bin": {
+    "npm-auto-version": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codersvn/npm-auto-version.git"
+  },
+  "keywords": [
+    "NPM",
+    "Version",
+    "Auto"
+  ],
+  "author": "Hieupv <hieupv@codersvn.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codersvn/npm-auto-version/issues"
+  },
+  "homepage": "https://github.com/codersvn/npm-auto-version#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^23.5.0",
+    "nodemon": "^1.18.3",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "colors": "^1.3.2",
+    "fs": "^0.0.1-security",
+    "semver": "^5.5.1"
+  }
+}
