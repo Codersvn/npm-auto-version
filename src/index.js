@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Parser } from './app/Services/Parser';
 import path from 'path';
 import 'colors';

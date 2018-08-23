@@ -1,6 +1,6 @@
 {
   "name": "@codersvn/npm-auto-version",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This script is used to automatically generate new NPM versions when publishing.",
   "main": "dist/src/index.js",
   "scripts": {
@@ -8,10 +8,10 @@
     "devstart": "./node_modules/.bin/nodemon ./node_modules/.bin/babel-node src/index.js",
     "increase": "./node_modules/.bin/babel-node src/index.js",
     "build": "rimraf dist && ./node_modules/.bin/babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,error_code.md,README.md --copy-files",
-    "publish_module": "npm run build && npm run increase patch && npm publish --access public"
+    "publish_module": "npm run build && npm run increase patch && npm publish --access public && rm -rf dist"
   },
   "bin": {
-    "npm-auto-version": "./dist/index.js"
+    "npm-auto-version": "./dist/src/index.js"
   },
   "repository": {
     "type": "git",
